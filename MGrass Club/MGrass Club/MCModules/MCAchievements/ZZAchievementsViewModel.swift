@@ -1,13 +1,20 @@
+//
+//  ZZAchievementsViewModel.swift
+//  MGrass Club
+//
+//
+
+
 import SwiftUI
 
 class ZZAchievementsViewModel: ObservableObject {
     
     @Published var achievements: [NEGAchievement] = [
-        NEGAchievement(image: "achieve1ImageHKH", title: "achieve1TextHKH", isAchieved: false),
-        NEGAchievement(image: "achieve2ImageHKH", title: "achieve2TextHKH", isAchieved: false),
-        NEGAchievement(image: "achieve3ImageHKH", title: "achieve3TextHKH", isAchieved: false),
-        NEGAchievement(image: "achieve4ImageHKH", title: "achieve4TextHKH", isAchieved: false),
-        NEGAchievement(image: "achieve5ImageHKH", title: "achieve5TextHKH", isAchieved: false),
+        NEGAchievement(image: "achieve1ImageMC", title: "achieve1TextMC", isAchieved: false),
+        NEGAchievement(image: "achieve2ImageMC", title: "achieve2TextMC", isAchieved: false),
+        NEGAchievement(image: "achieve3ImageMC", title: "achieve3TextMC", isAchieved: false),
+        NEGAchievement(image: "achieve4ImageMC", title: "achieve4TextMC", isAchieved: false),
+        NEGAchievement(image: "achieve5ImageMC", title: "achieve5TextMC", isAchieved: false),
     ] {
         didSet {
             saveAchievementsItem()
