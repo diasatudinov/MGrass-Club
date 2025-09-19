@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "achieve3ImageMC.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
