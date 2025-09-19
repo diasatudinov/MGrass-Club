@@ -1,3 +1,10 @@
+//
+//  DailyRewardsViewModel.swift
+//  MGrass Club
+//
+//
+
+
 import SwiftUI
 import Combine
 

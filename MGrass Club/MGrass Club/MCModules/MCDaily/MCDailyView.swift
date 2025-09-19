@@ -2,14 +2,89 @@
 //  MCDailyView.swift
 //  MGrass Club
 //
-//  Created by Dias Atudinov on 19.09.2025.
 //
 
 import SwiftUI
 
 struct MCDailyView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @StateObject private var viewModel = DailyRewardsViewModel()
+    
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+    private let dayCellHeight: CGFloat = ZZDeviceManager.shared.deviceType == .pad ? 200:45
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack(spacing: 0) {
+                
+                ZStack {
+                    Image(.dailyViewBgMC)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(1...viewModel.totalDaysCount, id: \.self) { day in
+                            ZStack {
+                                
+                                Image(viewModel.isDayClaimed(day) ? .receivedBgMC : .getBgMC)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .opacity(viewModel.isDayUnlocked(day) ? 1 : 0.5)
+                                
+                            }
+                            .frame(width: 105, height: dayCellHeight)
+                            .offset(x: day > 6 ? 105:0)
+                            
+                            
+                        }
+                    }.frame(width: ZZDeviceManager.shared.deviceType == .pad ? 800:350, height: 250).padding(.top, 50)
+                    
+                    VStack{
+                        
+                        Spacer()
+                        
+                        Button {
+                            viewModel.claimNext()
+                        } label: {
+                            Image(.getBtnMC)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 45)
+                        }
+                    }
+                }.frame(height: 360)
+            }
+            
+            VStack {
+                ZStack {
+                    
+                    HStack(alignment: .top) {
+                        
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                            
+                        } label: {
+                            Image(.backIconMC)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:75)
+                        }
+                        
+                        Spacer()
+                                                
+                    }
+                }.padding([.horizontal, .top])
+                Spacer()
+                
+            }
+            
+        }.background(
+            ZStack {
+                Image(.appBg1MC)
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+            }
+        )
     }
 }
 
