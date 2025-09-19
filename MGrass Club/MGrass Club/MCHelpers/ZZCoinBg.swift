@@ -12,15 +12,15 @@ struct ZZCoinBg: View {
     var height: CGFloat = ZZDeviceManager.shared.deviceType == .pad ? 100:50
     var body: some View {
         ZStack {
-//            Image(.coinsBgHKH)
-//                .resizable()
-//                .scaledToFit()
+            Image(.coinsBgMC)
+                .resizable()
+                .scaledToFit()
             
             Text("\(user.money)")
                 .font(.system(size: ZZDeviceManager.shared.deviceType == .pad ? 45:25, weight: .black))
-                .foregroundStyle(.white)
+                .foregroundStyle(.black)
                 .textCase(.uppercase)
-                .offset(x: 15)
+                .offset(x: -25)
             
             
             
