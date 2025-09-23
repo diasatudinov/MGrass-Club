@@ -7,10 +7,10 @@
 import SwiftUI
 
 struct MCAchievementsView: View {
-    @StateObject var user = ZZUser.shared
+    @StateObject var user = MCUser.shared
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject var viewModel = ZZAchievementsViewModel()
+    @StateObject var viewModel = MCAchievementsViewModel()
     @State private var index = 0
     var body: some View {
         ZStack {
@@ -26,12 +26,12 @@ struct MCAchievementsView: View {
                             Image(.backIconMC)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:60)
+                                .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:60)
                         }
                         
                         Spacer()
                         
-                        ZZCoinBg()
+                        MCCoinBg()
                     }
                 }.padding([.top])
                 
@@ -47,7 +47,7 @@ struct MCAchievementsView: View {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:180)
+                                    .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:180)
                                     .opacity(item.isAchieved ? 1:0)
                                     
                                 
@@ -62,10 +62,10 @@ struct MCAchievementsView: View {
                                         Image(.getBtnMC)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:45)
+                                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:45)
                                     }
                                 }
-                            }.frame(width: 300, height: ZZDeviceManager.shared.deviceType == .pad ? 100:300)
+                            }.frame(width: 300, height: MCDeviceManager.shared.deviceType == .pad ? 100:300)
                         }
                         
                     }

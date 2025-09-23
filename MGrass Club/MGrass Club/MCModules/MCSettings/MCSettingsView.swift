@@ -8,7 +8,7 @@ import SwiftUI
 
 struct MCSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-        @StateObject var settingsVM = CPSettingsViewModel()
+        @StateObject var settingsVM = MCSettingsViewModel()
         var body: some View {
             ZStack {
                 
@@ -28,7 +28,7 @@ struct MCSettingsView: View {
                                     Image(.musicTextMC)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:25)
+                                        .frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:25)
                                     
                                     Spacer()
                                     
@@ -40,7 +40,7 @@ struct MCSettingsView: View {
                                         Image(settingsVM.soundEnabled ? .onMC:.offMC)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:45)
+                                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:45)
                                     }
                                 }
                                 
@@ -48,7 +48,7 @@ struct MCSettingsView: View {
                                     Image(.volumeTextMC)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:25)
+                                        .frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:25)
                                     
                                     Spacer()
                                     
@@ -67,7 +67,7 @@ struct MCSettingsView: View {
                                                 .bold()
                                             
                                                 
-                                        }.frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:45)
+                                        }.frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:45)
                                     }
                                 }
                                 
@@ -75,7 +75,7 @@ struct MCSettingsView: View {
                                     Image(.languageTextMC)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:25)
+                                        .frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:25)
                                     
                                     Spacer()
                                     
@@ -83,7 +83,7 @@ struct MCSettingsView: View {
                                     Image(.englishBtnMC)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 80:45)
+                                        .frame(height: MCDeviceManager.shared.deviceType == .pad ? 80:45)
                                     
                                 }
                             }
@@ -92,7 +92,7 @@ struct MCSettingsView: View {
                                 
                             
                         }.frame(width: 300).padding(.bottom, 20)
-                    }.frame(height: ZZDeviceManager.shared.deviceType == .pad ? 88:313)
+                    }.frame(height: MCDeviceManager.shared.deviceType == .pad ? 88:313)
                     
                 }
                 
@@ -105,7 +105,7 @@ struct MCSettingsView: View {
                             Image(.backIconMC)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:75)
+                                .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:75)
                         }
                         
                         Spacer()

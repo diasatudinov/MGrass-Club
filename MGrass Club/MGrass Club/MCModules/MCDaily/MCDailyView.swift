@@ -8,10 +8,10 @@ import SwiftUI
 
 struct MCDailyView: View {
     @Environment(\.presentationMode) var presentationMode
-    @StateObject private var viewModel = DailyRewardsViewModel()
+    @StateObject private var viewModel = MCDailyRewardsViewModel()
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
-    private let dayCellHeight: CGFloat = ZZDeviceManager.shared.deviceType == .pad ? 200:45
+    private let dayCellHeight: CGFloat = MCDeviceManager.shared.deviceType == .pad ? 200:45
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -36,7 +36,7 @@ struct MCDailyView: View {
                             
                             
                         }
-                    }.frame(width: ZZDeviceManager.shared.deviceType == .pad ? 800:350, height: 250).padding(.top, 50)
+                    }.frame(width: MCDeviceManager.shared.deviceType == .pad ? 800:350, height: 250).padding(.top, 50)
                     
                     VStack{
                         
@@ -66,7 +66,7 @@ struct MCDailyView: View {
                             Image(.backIconMC)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:75)
+                                .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:75)
                         }
                         
                         Spacer()

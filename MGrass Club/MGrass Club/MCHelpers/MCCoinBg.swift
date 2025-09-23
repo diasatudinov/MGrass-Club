@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MCCoinBg: View {
-    @StateObject var user = ZZUser.shared
-    var height: CGFloat = ZZDeviceManager.shared.deviceType == .pad ? 100:50
+    @StateObject var user = MCUser.shared
+    var height: CGFloat = MCDeviceManager.shared.deviceType == .pad ? 100:50
     var body: some View {
         ZStack {
             Image(.coinsBgMC)
@@ -17,7 +17,7 @@ struct MCCoinBg: View {
                 .scaledToFit()
             
             Text("\(user.money)")
-                .font(.system(size: ZZDeviceManager.shared.deviceType == .pad ? 45:25, weight: .black))
+                .font(.system(size: MCDeviceManager.shared.deviceType == .pad ? 45:25, weight: .black))
                 .foregroundStyle(.black)
                 .textCase(.uppercase)
                 .offset(x: -25)

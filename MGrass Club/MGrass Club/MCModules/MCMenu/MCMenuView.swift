@@ -15,7 +15,7 @@ struct MCMenuView: View {
     @State private var showCalendar = false
     @State private var showDailyReward = false
     
-//    @StateObject var shopVM = CPShopViewModel()
+    @StateObject var shopVM = MCShopViewModel()
     
     var body: some View {
         
@@ -32,7 +32,7 @@ struct MCMenuView: View {
                         Image(.settingsIconMC)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:75)
+                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:75)
                     }
                     
                     Spacer()
@@ -50,7 +50,7 @@ struct MCMenuView: View {
                         Image(.dailyIconMC)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 100:75)
+                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 100:75)
                     }
                 }
             }.padding()
@@ -70,7 +70,7 @@ struct MCMenuView: View {
                         Image(.playIconMC)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 140:55)
+                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 140:55)
                     }
                     
                     Button {
@@ -79,7 +79,7 @@ struct MCMenuView: View {
                         Image(.shopIconMC)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 140:55)
+                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 140:55)
                     }
                     
                     Button {
@@ -88,7 +88,7 @@ struct MCMenuView: View {
                         Image(.achievementsIconMC)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ZZDeviceManager.shared.deviceType == .pad ? 140:55)
+                            .frame(height: MCDeviceManager.shared.deviceType == .pad ? 140:55)
                     }
                 }.padding(.bottom, 40)
             }.frame(height: 340)
@@ -104,19 +104,19 @@ struct MCMenuView: View {
                 }
             )
             .fullScreenCover(isPresented: $showGame) {
-//                HKHLevelsVIew()
+                ForestGrowthView()
             }
             .fullScreenCover(isPresented: $showAchievement) {
-//                HKHAchievementsView()
+                MCAchievementsView()
             }
             .fullScreenCover(isPresented: $showShop) {
-//                HKHShopView(viewModel: shopVM)
+                MCShopView(viewModel: shopVM)
             }
             .fullScreenCover(isPresented: $showSettings) {
                 MCSettingsView()
             }
             .fullScreenCover(isPresented: $showDailyReward) {
-//                HKHDailyView()
+                MCDailyView()
             }
     }
 }
