@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "zaborBtnMC.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
